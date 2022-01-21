@@ -34,7 +34,7 @@ func saveFile(migrationId string, filename string, fileData bytes.Buffer) error 
 }
 
 // UploadFile Takes the stream of data to upload a file
-func (*Server) UploadFile(stream service.MigrationDataService_UploadFileServer) error {
+func (s *Server) UploadFile(stream service.MigrationDataService_UploadFileServer) error {
 	in, err := stream.Recv()
 	if err != io.EOF && err != nil {
 		return err
